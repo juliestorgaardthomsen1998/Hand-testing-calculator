@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Hand_testing_calculator
@@ -25,6 +26,14 @@ namespace Hand_testing_calculator
         public double Power(double x, double exp)
         {
             return Math.Pow(x, exp);
+        }
+
+        public double Divide(double a, double b)
+        {
+            if (b == 0)
+                throw new ArgumentOutOfRangeException();
+            
+            return a / b;
         }
     }
 }

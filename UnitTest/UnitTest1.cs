@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using Hand_testing_calculator;
 
@@ -58,6 +59,20 @@ namespace UnitTest
         public void Power_RaiseNumbers_ResultIsCorrect(double x, double exp, double result)
         {
             Assert.That(uut.Power(x, exp), Is.EqualTo(result));
+        }
+
+        [TestCase(3, 2, 1.5)]
+        [TestCase(-3, -2, 1.5)]
+        [TestCase(-3, 2, -1.5)]
+        public void Test_Devide_Method(double a, double b, double result)
+        {
+            Assert.That(uut.Divide(a, b), Is.EqualTo(result));
+        }
+
+        [TestCase(3,0)]
+        public void Test_Devide_with_0(double a, double b)
+        {
+            Assert.Throws<ArgumentOutOfRangeException> (()=>uut.Divide(a,b));
         }
     }
 }
