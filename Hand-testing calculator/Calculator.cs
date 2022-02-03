@@ -22,9 +22,9 @@ namespace Hand_testing_calculator
             return a * b;
         }
 
-        public double Power(double a, double b)
+        public double Power(double x, double exp)
         {
-            return Math.Pow(a, b);
+            return Math.Pow(x, exp);
         }
     }
 }
