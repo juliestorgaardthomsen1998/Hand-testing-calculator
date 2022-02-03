@@ -9,28 +9,28 @@ namespace Hand_testing_calculator
     {
         public double Accumulator { get; private set; }
 
-        public double Add(double a, double b)
+        public double Add(double a)
         {
-            Accumulator = a + b;
-            return a + b;
+            Accumulator = a + Accumulator;
+            return Accumulator;
         }
 
-        public double Subtract(double a, double b)
+        public double Subtract(double a)
         {
-            Accumulator = a - b;
-            return a - b;
+            Accumulator = Accumulator-a;
+            return Accumulator;
         }
 
-        public double Multiply(double a, double b)
+        public double Multiply(double a)
         {
-            Accumulator= a* b;
-            return a * b;
+            Accumulator = Accumulator * a;
+            return Accumulator;
         }
 
-        public double Power(double x, double exp)
+        public double Power(double exp)
         {
-            Accumulator = Math.Pow(x, exp);
-            return Math.Pow(x, exp);
+            Accumulator = Math.Pow(Accumulator, exp);
+            return Accumulator;
         }
 
         public void Clear()
@@ -38,12 +38,12 @@ namespace Hand_testing_calculator
             Accumulator = 0;
         }
 
-        public double Divide(double a, double b)
+        public double Divide(double a)
         {
-            if (b == 0)
+            if (a == 0)
                 throw new ArgumentOutOfRangeException();
-            
-            return a / b;
+            Accumulator = Accumulator / a;
+            return Accumulator;
         }
     }
 }
