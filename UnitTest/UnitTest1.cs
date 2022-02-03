@@ -4,6 +4,7 @@ using Hand_testing_calculator;
 
 namespace UnitTest
 {
+    [TestFixture]
     public class Tests
     {
         private Calculator uut;
@@ -59,6 +60,12 @@ namespace UnitTest
         public void Power_RaiseNumbers_ResultIsCorrect(double x, double exp, double result)
         {
             Assert.That(uut.Power(x, exp), Is.EqualTo(result));
+        }
+
+
+        public void Clear_ClearAccumulator_AccumulatorIsSetToZero(double a, double result)
+        {
+            Assert.That(uut.Clear(), Is.EqualTo(0));
         }
 
         [TestCase(3, 2, 1.5)]
