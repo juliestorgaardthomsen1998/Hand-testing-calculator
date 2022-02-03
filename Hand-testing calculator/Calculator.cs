@@ -34,7 +34,7 @@ namespace Hand_testing_calculator
 
         public void Clear()
         {
-          
+            Accumulator = 0;
         }
     }
 }
