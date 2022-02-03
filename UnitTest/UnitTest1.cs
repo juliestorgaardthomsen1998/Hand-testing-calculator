@@ -62,10 +62,12 @@ namespace UnitTest
             Assert.That(uut.Power(x, exp), Is.EqualTo(result));
         }
 
-
-        public void Clear_ClearAccumulator_AccumulatorIsSetToZero(double a, double result)
+        [Test]
+        public void Clear_ClearAccumulator_AccumulatorIsSetToZero()
         {
-            Assert.That(uut.Clear(), Is.EqualTo(0));
+            uut.Clear();
+
+            Assert.That(uut.Accumulator, Is.EqualTo(0));
         }
 
         [TestCase(3, 2, 1.5)]
