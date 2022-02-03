@@ -3,6 +3,7 @@ using Hand_testing_calculator;
 
 namespace UnitTest
 {
+    [TestFixture]
     public class Tests
     {
         private Calculator uut;
