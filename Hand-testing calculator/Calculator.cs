@@ -26,5 +26,10 @@ namespace Hand_testing_calculator
         {
             return Math.Pow(x, exp);
         }
+
+        public void Clear()
+        {
+          
+        }
     }
 }
