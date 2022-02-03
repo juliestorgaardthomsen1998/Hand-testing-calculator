@@ -1,11 +1,12 @@
+﻿using Hand_testing_calculator;
 using NUnit.Framework;
-using Hand_testing_calculator;
 
 namespace UnitTest
 {
     [TestFixture]
-    public class Tests
+    public class AccumulatorTest
     {
+
         private Calculator uut;
 
         [SetUp]
@@ -16,22 +17,25 @@ namespace UnitTest
 
 
         [TestCase(3, 2, 5)]
-        [TestCase(-3, -2, -5)]
+        [TestCase(6, 2, 8)]
         [TestCase(-3, 2, -1)]
         [TestCase(3, -2, 1)]
         [TestCase(3, 0, 3)]
-        public void Add_AddPosAndNegNumbers_ResultIsCorrect(int a, int b, int result)
+        public void Add_AddPosAndNegNumbers_AccumulatorIsCorrect(int a, int b, int accumulator)
         {
-            Assert.That(uut.Add(a, b), Is.EqualTo(result));
-        }
+            uut.Add(a, b);
 
+            Assert.That(uut.Accumulator, Is.EqualTo(accumulator));
+        }
 
         [TestCase(3, 2, 1)]
         [TestCase(-3, -2, -1)]
         [TestCase(-3, 2, -5)]
-        public void Subtract_SubtractPosAndNegNumbers_ResultIsCorrect(int a, int b, int result)
+        public void Subtract_AddPosAndNegNumbers_AccumulatorIsCorrect(int a, int b, int accumulator)
         {
-            Assert.That(uut.Subtract(a, b), Is.EqualTo(result));
+            uut.Subtract(a, b);
+
+            Assert.That(uut.Accumulator, Is.EqualTo(accumulator));
         }
 
 
@@ -42,11 +46,12 @@ namespace UnitTest
         [TestCase(0, -2, 0)]
         [TestCase(-2, 0, 0)]
         [TestCase(0, 0, 0)]
-        public void Multiply_MultiplyNunmbers_ResultIsCorrect(int a, int b, int result)
+        public void Multiply_AddPosAndNegNumbers_AccumulatorIsCorrect(int a, int b, int accumulator)
         {
-            Assert.That(uut.Multiply(a, b), Is.EqualTo(result));
-        }
+            uut.Multiply(a, b);
 
+            Assert.That(uut.Accumulator, Is.EqualTo(accumulator));
+        }
 
         [TestCase(2, 3, 8)]
         [TestCase(2, -3, 0.125)]
@@ -56,9 +61,11 @@ namespace UnitTest
         [TestCase(10, 0, 1)]
         [TestCase(4, 0.5, 2.0)]
         [TestCase(9, 0.5, 3.0)]
-        public void Power_RaiseNumbers_ResultIsCorrect(double x, double exp, double result)
+        public void Power_RaiseNumbers_AccumulatorIsCorrect(double x, double exp, double accumulator)
         {
-            Assert.That(uut.Power(x, exp), Is.EqualTo(result));
+            uut.Power(x, exp);
+
+            Assert.That(uut.Accumulator, Is.EqualTo(accumulator));
         }
     }
 }
