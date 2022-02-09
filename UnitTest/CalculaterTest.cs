@@ -5,7 +5,7 @@ using Hand_testing_calculator;
 namespace UnitTest
 {
     [TestFixture]
-    public class Tests
+    public class CalculaterTest
     {
         private Calculator uut;
 
