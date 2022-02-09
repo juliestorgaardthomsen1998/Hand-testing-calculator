@@ -15,6 +15,15 @@ namespace UnitTest
             uut = new Calculator();
         }
 
+        [TestCase(2, 2)]
+        [TestCase(-1, -1)]
+        [TestCase(7, 7)]
+        [TestCase(-10, -10)]
+
+        public void Add_Add1PosAndNegNumber_ResultIsCorrect(double a, double result)
+        {
+            Assert.That(uut.Add(a), Is.EqualTo(result));
+        }
 
         //[TestCase(3, 2, 5)]
         //[TestCase(-3, -2, -5)]

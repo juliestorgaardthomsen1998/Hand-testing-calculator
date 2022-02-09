@@ -8,7 +8,6 @@ namespace Hand_testing_calculator
         {
             Calculator calculator = new Calculator();
             
-
         }
     }
 }
