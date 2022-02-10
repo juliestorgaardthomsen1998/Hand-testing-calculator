@@ -62,6 +62,30 @@ namespace UnitTest
         }
 
         [Test]
+        public void Subtract_1posAnd1NegNumber_ResultIs7()
+        {
+            //Act
+            uut.Subtract(-10);
+            double number1 = uut.Subtract(3);
+
+
+            //Assert
+            Assert.That(number1, Is.EqualTo(7));
+        }
+
+        [Test]
+        public void Subtract_2NegNumber_ResultIs7()
+        {
+            //Act
+            uut.Subtract(-3);
+            double number1 = uut.Subtract(-4);
+
+
+            //Assert
+            Assert.That(number1, Is.EqualTo(7));
+        }
+
+        [Test]
         public void Multiply_Multiply2PosNumber_ResultIs20()
         {
             //Act
@@ -94,30 +118,7 @@ namespace UnitTest
             Assert.That(number2, Is.EqualTo(8));
         }
 
-        [Test]
-        public void Subtract_1posAnd1NegNumber_ResultIs7()
-        {
-            //Act
-            uut.Subtract(-10);
-            double number1 =uut.Subtract(3);
-
-
-            //Assert
-            Assert.That(number1, Is.EqualTo(7));
-        }
-
-        [Test]
-        public void Subtract_2NegNumber_ResultIs7()
-        {
-            //Act
-            uut.Subtract(-3);
-            double number1 = uut.Subtract(-4);
-
-
-            //Assert
-            Assert.That(number1, Is.EqualTo(7));
-        }
-
+        
         [Test]
         public void Clear_ClearAccumulator_AccumulatorIsSetToZero()
         {
