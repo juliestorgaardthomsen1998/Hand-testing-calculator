@@ -37,6 +37,7 @@ namespace UnitTest
             Assert.That(number2, Is.EqualTo(6));
         }
 
+
         [Test]
         public void Add_Add1PosAnd1NegNumber_ResultIs6()
         {
@@ -49,6 +50,16 @@ namespace UnitTest
         }
 
 
+        [Test]
+        public void Subtract_1posNumber_ResultIsNeg3()
+        {
+            //Act
+            double number1 = uut.Subtract(3);
+            
+
+            //Assert
+            Assert.That(number1, Is.EqualTo(-3));
+        }
 
         [Test]
         public void Clear_ClearAccumulator_AccumulatorIsSetToZero()
