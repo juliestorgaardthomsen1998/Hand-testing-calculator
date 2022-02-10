@@ -48,6 +48,16 @@ namespace UnitTest
             //Assert
             Assert.That(number2, Is.EqualTo(6));
         }
+        [Test]
+        public void Add_Add2PosDecimalNumber_ResultIs7Comma5()
+        {
+            //Act
+            uut.Add(2.3);
+            double number2 = uut.Add(5.2);
+
+            //Assert
+            Assert.That(number2, Is.EqualTo(7.5));
+        }
 
 
         [Test]
@@ -86,6 +96,18 @@ namespace UnitTest
         }
 
         [Test]
+        public void Subtract_2DecimalNumber_ResultIsNeg2Comma2()
+        {
+            //Act
+            uut.Subtract(1.2);
+            double number1 = uut.Subtract(1);
+
+
+            //Assert
+            Assert.That(number1, Is.EqualTo(-2.2));
+        }
+
+        [Test]
         public void Multiply_Multiply2PosNumber_ResultIs20()
         {
             //Act
@@ -118,7 +140,18 @@ namespace UnitTest
             Assert.That(number2, Is.EqualTo(8));
         }
 
-        
+        [Test]
+        public void Multiply_Multiply2DecimalNumber_ResultIs27Comma04()
+        {
+            //Act
+            double number1 = uut.Add(5.2);
+            double number2 = uut.Multiply(5.2);
+
+            //Assert
+            Assert.That(number2, Is.EqualTo(27.04).Within(0.1));
+        }
+
+
         [Test]
         public void Clear_ClearAccumulator_AccumulatorIsSetToZero()
         {
