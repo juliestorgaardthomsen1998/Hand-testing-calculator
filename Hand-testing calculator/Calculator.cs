@@ -40,8 +40,11 @@ namespace Hand_testing_calculator
 
         public double Divide(double a)
         {
-            if (a == 0)
-                throw new ArgumentOutOfRangeException();
+            if (a == 0.0)
+            { 
+                throw new DivideByZeroException("can't divide by zero");
+            }
+            
             Accumulator = Accumulator / a;
             return Accumulator;
         }

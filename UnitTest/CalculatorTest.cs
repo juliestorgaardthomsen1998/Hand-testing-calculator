@@ -152,17 +152,17 @@ namespace UnitTest
             Assert.That(number1, Is.EqualTo(1.5));
         }
 
-        //[Test]
-        //public void Divide_with0_ResultException()
-        //{
-        //    //Act
-        //    uut.Add(9);
-        //    double number1 = uut.Divide(0);
+        [Test]
+        public void Divide_with0_ResultException()
+        {
+            //Act
+            uut.Add(9);
+            double number1 = 0;
 
-        //    //Assert 
-        //    Assert.That(() => uut.Divide(number1), Throws.TypeOf<ArgumentOutOfRangeException>());
-
-        //}
+            //Assert
+            Assert.That(() => uut.Divide(number1),
+                Throws.TypeOf<DivideByZeroException>());
+        }
 
     }
 }
