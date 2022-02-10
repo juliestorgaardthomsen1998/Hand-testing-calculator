@@ -62,6 +62,63 @@ namespace UnitTest
         }
 
         [Test]
+        public void Multiply_Multiply2PosNumber_ResultIs20()
+        {
+            //Act
+            double number1 = uut.Add(5);
+            double number2 = uut.Multiply(4);
+
+            //Assert
+            Assert.That(number2,Is.EqualTo(20));
+        }
+
+        [Test]
+        public void Multiply_Multiply1PosNumberAnd1NegNumber_ResultIsNeg15()
+        {
+            //Act
+            double number1 = uut.Add(5);
+            double number2 = uut.Multiply(-3);
+
+            //Assert
+            Assert.That(number2, Is.EqualTo(-15));
+        }
+
+        [Test]
+        public void Multiply_Multiply2NegNumbers_ResultIs8()
+        {
+            //Act
+            double number1 = uut.Add(-2);
+            double number2 = uut.Multiply(-4);
+
+            //Assert
+            Assert.That(number2, Is.EqualTo(8));
+        }
+
+        [Test]
+        public void Subtract_1posAnd1NegNumber_ResultIs7()
+        {
+            //Act
+            uut.Subtract(-10);
+            double number1 =uut.Subtract(3);
+
+
+            //Assert
+            Assert.That(number1, Is.EqualTo(7));
+        }
+
+        [Test]
+        public void Subtract_2NegNumber_ResultIs7()
+        {
+            //Act
+            uut.Subtract(-3);
+            double number1 = uut.Subtract(-4);
+
+
+            //Assert
+            Assert.That(number1, Is.EqualTo(7));
+        }
+
+        [Test]
         public void Clear_ClearAccumulator_AccumulatorIsSetToZero()
         {
             //Act
