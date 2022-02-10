@@ -53,20 +53,18 @@ namespace UnitTest
         //    Assert.That(uut.Accumulator, Is.EqualTo(accumulator));
         //}
 
-        //[TestCase(2, 3, 8)]
-        //[TestCase(2, -3, 0.125)]
-        //[TestCase(-2, -3, -0.125)]
-        //[TestCase(1, 10, 1)]
-        //[TestCase(1, -10, 1)]
-        //[TestCase(10, 0, 1)]
-        //[TestCase(4, 0.5, 2.0)]
-        //[TestCase(9, 0.5, 3.0)]
-        //public void Power_RaiseNumbers_AccumulatorIsCorrect(double x, double exp, double accumulator)
-        //{
-        //    uut.Power(x, exp);
+        [TestCase(1,2)]
+        [TestCase(-1, 0.5)]
+        [TestCase(0, 1)]
+        public void Power_RaiseNumbers_AccumulatorIsCorrect(double exp, double result)
+        {
+            //Act
+            uut.Add(2);
+            uut.Power(exp);
 
-        //    Assert.That(uut.Accumulator, Is.EqualTo(accumulator));
-        //}
+            //Assert
+            Assert.That(uut.Accumulator, Is.EqualTo(result));
+        }
 
         [TestCase(2,2)]
         [TestCase(-1, -1)]
