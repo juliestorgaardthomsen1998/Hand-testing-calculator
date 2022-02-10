@@ -139,6 +139,16 @@ namespace UnitTest
             //Assert
             Assert.That(number2, Is.EqualTo(8));
         }
+        [Test]
+        public void Multiply_Multiply2DecimalNumber_ResultIs27Comma04()
+        {
+            //Act
+            double number1 = uut.Add(5.2);
+            double number2 = uut.Multiply(5.2);
+
+            //Assert
+            Assert.That(number2, Is.EqualTo(27.04).Within(0.1));
+        }
 
         [Test]
         public void Power_Power2exp_resultIs9()
@@ -173,17 +183,7 @@ namespace UnitTest
             Assert.That(number2, Is.EqualTo(1));
         }
 
-        [Test]
-        public void Multiply_Multiply2DecimalNumber_ResultIs27Comma04()
-        {
-            //Act
-            double number1 = uut.Add(5.2);
-            double number2 = uut.Multiply(5.2);
-
-            //Assert
-            Assert.That(number2, Is.EqualTo(27.04).Within(0.1));
-        }
-
+        
 
         [Test]
         public void Clear_ClearAccumulator_AccumulatorIsSetToZero()
