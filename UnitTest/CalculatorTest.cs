@@ -71,6 +71,41 @@ namespace UnitTest
             Assert.That(uut.Accumulator, Is.EqualTo(0));
         }
 
-        
+
+        [Test]
+        public void Divide_1posNumber_ResultIs3()
+        {
+            //Act
+            uut.Add(9);                   
+            double number1 = uut.Divide(3);
+
+            //Assert
+            Assert.That(number1, Is.EqualTo(3));
+        }
+
+        [Test] 
+        public void Divide_2posNumber_ResultIs1Comma5()
+        {
+            //Act
+            uut.Add(9);
+            uut.Divide(3);
+            double number1 = uut.Divide(2);
+
+            //Assert
+            Assert.That(number1, Is.EqualTo(1.5));
+        }
+
+        //[Test]
+        //public void Divide_with0_ResultException()
+        //{
+        //    //Act
+        //    uut.Add(9);
+        //    double number1 = uut.Divide(0);
+
+        //    //Assert 
+        //    Assert.That(() => uut.Divide(number1), Throws.TypeOf<ArgumentOutOfRangeException>());
+
+        //}
+
     }
 }
