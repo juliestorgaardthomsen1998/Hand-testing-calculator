@@ -118,7 +118,39 @@ namespace UnitTest
             Assert.That(number2, Is.EqualTo(8));
         }
 
-        
+        [Test]
+        public void Power_Power2exp_resultIs9()
+        {
+            //Act
+            double number1 =uut.Add(3);
+            double number2 = uut.Power(2);
+
+            //Assert
+            Assert.That(number2, Is.EqualTo(9));
+        }
+
+        [Test]
+        public void Power_PoweMinus1exp_resultIs0Point5()
+        {
+            //Act
+            double number1 = uut.Add(2);
+            double number2 = uut.Power(-1);
+
+            //Assert
+            Assert.That(number2, Is.EqualTo(0.5));
+        }
+
+        [Test]
+        public void Power_Power0exp_resultIs1()
+        {
+            //Act
+            double number1 = uut.Add(3);
+            double number2 = uut.Power(0);
+
+            //Assert
+            Assert.That(number2, Is.EqualTo(1));
+        }
+
         [Test]
         public void Clear_ClearAccumulator_AccumulatorIsSetToZero()
         {
