@@ -16,6 +16,7 @@ namespace UnitTest
             uut = new Calculator();
         }
 
+        //Tester Add 
         [Test]
         public void Add_Add1PosNumber_ResultIs4()
         {
@@ -59,7 +60,7 @@ namespace UnitTest
             Assert.That(number2, Is.EqualTo(7.5));
         }
 
-
+        //Tester subtract 
         [Test]
         public void Subtract_1posNumber_ResultIsNeg3()
         {
@@ -107,6 +108,7 @@ namespace UnitTest
             Assert.That(number1, Is.EqualTo(-2.2));
         }
 
+        //Tester multiply
         [Test]
         public void Multiply_Multiply2PosNumber_ResultIs20()
         {
@@ -150,6 +152,7 @@ namespace UnitTest
             Assert.That(number2, Is.EqualTo(27.04).Within(0.1));
         }
 
+        //Tester power
         [Test]
         public void Power_Power2exp_resultIs9()
         {
@@ -184,18 +187,19 @@ namespace UnitTest
         }
 
         
-
+        //Tester clear
         [Test]
         public void Clear_ClearAccumulator_AccumulatorIsSetToZero()
         {
             //Act
+            uut.Add(3);
             uut.Clear();
 
             //Assert
             Assert.That(uut.Accumulator, Is.EqualTo(0));
         }
 
-
+        //Tester divide
         [Test]
         public void Divide_1posNumber_ResultIs3()
         {
